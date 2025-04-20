@@ -16,7 +16,7 @@ DearFlip is a powerful PDF Flipbook solution that offers a realistic book-like e
 
 ### 1. Download DearFlip
 
-Purchase and download DearFlip from [their official website](https://dearflip.com/).
+Purchase and download DearFlip from [official website](https://dearflip.com/).
 
 ### 2. Extract DearFlip Files
 
