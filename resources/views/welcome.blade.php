@@ -33,9 +33,7 @@
 
         <script>
             window.dflipLocation = "/dflip/";
-            window.dflipOptions = {
-                source: "/pdf/the-three-musketeers.pdf",
-            };
+            window.dflipOptions = @json($dflipOptions)
         </script>
     </body>
 </html>

@@ -3,5 +3,8 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $dflipOptions = [
+        'source' => '/pdf/the-three-musketeers.pdf'
+    ];
+    return view('welcome', compact('dflipOptions'));
 });
