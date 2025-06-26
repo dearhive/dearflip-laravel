@@ -9,10 +9,38 @@ DearFlip is a powerful PDF Flipbook solution that offers a realistic book-like e
 ## Requirements
 
 - PHP 8.1+
-- Laravel 10.x
+- Laravel x.x
 - jQuery (included with DearFlip)
 
 ## Installation
+
+### Option 1: Clone this Repository (Quick Start)
+
+If you want to quickly test the DearFlip implementation:
+
+```bash
+# Clone the repository
+git clone https://github.com/dearhive/dearflip-laravel.git
+cd dearflip-laravel
+
+# Install dependencies
+composer install
+npm install
+
+# Create environment file
+cp .env.example .env
+
+# Generate application key
+php artisan key:generate
+
+# Run database migrations
+php artisan migrate
+
+# Start the development server
+php artisan serve
+```
+
+### Option 2: Manual Setup
 
 ### 1. Download DearFlip
 
@@ -90,6 +118,8 @@ In your Blade template, initialize DearFlip with these options:
     }
 </script>
 ```
+
+### 
 
 ## Advanced Configuration
 
