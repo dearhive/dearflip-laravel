@@ -50,7 +50,7 @@ public/
 ## Basic Usage
 
 ### 1. Include DearFlip Assets
-
+[Reference](https://js.dearflip.com/docs/basic-usages/)
 In your Blade template (e.g., welcome.blade.php), include the required CSS and JavaScript files:
 
 ```html
@@ -61,69 +61,39 @@ In your Blade template (e.g., welcome.blade.php), include the required CSS and J
 ```
 
 ### 2. Add the DearFlip Element
+[Reference](https://js.dearflip.com/docs/basic-usages/)
 
 Add a container element where the PDF flipbook will be rendered:
 
 ```html
-<div data-option="dflipOptions" class="df-element"></div>
+<div data-option="dflipOptions" class="_df_book"></div>
 ```
 
 ### 3. Configure DearFlip Options
+[Reference](https://js.dearflip.com/docs/basic-usages/)
 
 Set the DearFlip configuration in your controller and pass it to the view:
 
 ```php
 // In your route or controller
-$dflipOptions = [
-    'source' => '/pdf/your-document.pdf'
-];
-
-return view('welcome', compact('dflipOptions'));
+Route::get('/', function () {
+    return view('welcome');
+});
 ```
 
 In your Blade template, initialize DearFlip with these options:
 
 ```html
 <script>
-    window.dflipLocation = "/dflip/";
-    window.dflipOptions = @json($dflipOptions)
+    window.dflipOptions = {
+        'source': '/pdf/the-three-musketeers.pdf'
+    }
 </script>
 ```
 
 ## Advanced Configuration
 
-DearFlip offers many customization options. Here are some commonly used ones:
-
-```php
-$dflipOptions = [
-    'source' => '/pdf/your-document.pdf',
-    'height' => 800,                          // Height in pixels, or 'auto'
-    'duration' => 800,                        // Page turn animation duration
-    'backgroundColor' => "#FFFFFF",           // Background color
-    'autoEnableOutline' => true,              // Auto show document outline
-    'autoEnableThumbnail' => true,            // Auto show thumbnails
-    'enableDownload' => true,                 // Enable PDF download
-    'enableSound' => true,                    // Enable page flip sound
-    'webgl' => true,                          // Use WebGL rendering
-    'hard' => 'all',                          // Hard pages (none, cover, all)
-    'openPage' => 1,                          // Initial page to open
-    'pageMode' => 2,                          // 1=single, 2=double
-    'singlePageMode' => 1,                    // 1=zoom, 2=booklet
-];
-```
-
-## Event Callbacks
-
-You can set callbacks for various events:
-
-```php
-$dflipOptions = [
-    'source' => '/pdf/your-document.pdf',
-    'onReady' => 'function(app) { console.log("DearFlip is ready!"); }',
-    'onPageChanged' => 'function(app) { console.log("Page changed to: " + app.currentPageNumber); }',
-    'onCreate' => 'function(app) { console.log("DearFlip created"); }',
-];
-```
+DearFlip offers many [customization options](https://js.dearflip.com/docs/options-list/). Here are some commonly used ones:
 
 ## Multiple PDF Viewers
 
@@ -144,17 +114,6 @@ To have multiple PDF viewers on a single page:
         backgroundColor: "#ADD8E6"
     });
 </script>
-```
-
-## Mobile Responsiveness
-
-DearFlip is mobile-friendly. For best results on smaller screens, consider adjusting some settings:
-
-```php
-$dflipOptions = [
-    'source' => '/pdf/your-document.pdf',
-    'mobileViewMode' => 1,  // Force single page mode on mobile
-];
 ```
 
 ## Troubleshooting
